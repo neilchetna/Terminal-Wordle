@@ -1,0 +1,18 @@
+{
+  "name": "cmd-wordle",
+  "version": "1.0.0",
+  "description": "A command line wordle that you can play on your terminal",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Neel Chetna",
+  "license": "MIT",
+  "bin": {
+    "hello": "./bin/index.js"
+  },
+  "dependencies": {
+    "boxen": "^4.0.0",
+    "chalk": "^2.4.2"
+  }
+}
