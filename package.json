@@ -4,7 +4,8 @@
   "description": "A command line wordle that you can play on your terminal",
   "main": "bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wordle": "node ."
   },
   "author": "Neel Chetna",
   "license": "MIT",

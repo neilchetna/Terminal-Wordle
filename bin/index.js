@@ -18,7 +18,7 @@ const validateInput = (word) => {
 standard_input.setEncoding("utf-8");
 
 // Prompt user to input data in console.
-console.log("Please input text in command line.", randomWord);
+console.log("Please input text in command line.");
 let attempts = 1;
 
 // When user input data and click enter key.
