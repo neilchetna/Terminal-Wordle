@@ -19,13 +19,13 @@ standard_input.setEncoding("utf-8");
 
 // Prompt user to input data in console.
 console.log("Please input text in command line.");
-let attempts = 1;
+let attempts = 0;
 
 // When user input data and click enter key.
 standard_input.on("data", function (data) {
   // User input exit.
   const input = validateInput(data.slice(0, 5).toLowerCase());
-  if (data === "exit\n" || attempts === 6) {
+  if (data === "exit\n" || attempts === 5) {
     // Program exit.
     console.log(randomWord, "You suck at this bro");
     process.exit();
@@ -34,9 +34,16 @@ standard_input.on("data", function (data) {
       attempts++;
       const res = checkWord(data, randomWord);
       const resArr = res[1];
-      console.log(resArr[0], resArr[1], resArr[2], resArr[3], resArr[4]);
+      console.log(
+        resArr[0],
+        resArr[1],
+        resArr[2],
+        resArr[3],
+        resArr[4],
+        `(${attempts}/6)`
+      );
       if (res[0] === 5) {
-        console.log("you got it right");
+        console.log("Yay! You got it right🎉");
         process.exit();
       }
     } else {
