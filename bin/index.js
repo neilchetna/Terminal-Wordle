@@ -44,11 +44,12 @@ standard_input.on("data", function (data) {
         `(${attempts}/6)`
       );
       if (res[0] === 5) {
-        console.log("Yay! You got it right🎉");
+        console.log("Yay! You got it right🎉\n");
         process.exit();
       }
       if (attempts === 6) {
         console.log(chalk.blue(randomWord), "You suck at this bro");
+        process.exit();
       }
     } else {
       console.log(chalk.red("Invalid Input"));
