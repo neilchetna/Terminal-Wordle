@@ -12,15 +12,17 @@ const checkWord = function (word, randomWord) {
   let resArr = [];
   let count = 0;
 
-  [...word].map((letter) => resArr.push(chalk.bgBlack.white(` ${letter} `)));
+  [...word].map((letter) =>
+    resArr.push(chalk.bgBlack.white(` ${letter.toUpperCase()} `))
+  );
 
   [...word].map((letter, index) => {
     if (randomWord.includes(String(letter))) {
-      resArr[index] = chalk.bgYellow.black(` ${letter} `);
+      resArr[index] = chalk.bgYellow.black(` ${letter.toUpperCase()} `);
     }
     if (letter === randomWord[index]) {
       count++;
-      resArr[index] = chalk.bgGreen.black(` ${letter} `);
+      resArr[index] = chalk.bgGreen.black(` ${letter.toUpperCase()} `);
     }
   });
   return [count, resArr];

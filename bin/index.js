@@ -18,21 +18,22 @@ const validateInput = (word) => {
 standard_input.setEncoding("utf-8");
 
 // Prompt user to input data in console.
-console.log("Please input text in command line.");
+console.log(
+  boxen("Start a game by typing your first word", { borderStyle: "round" })
+);
 let attempts = 0;
 
 // When user input data and click enter key.
 standard_input.on("data", function (data) {
   // User input exit.
   const input = validateInput(data.slice(0, 5).toLowerCase());
-  if (data === "exit\n" || attempts === 5) {
+  if (data === "exit\n") {
     // Program exit.
-    console.log(randomWord, "You suck at this bro");
     process.exit();
   } else {
     if (input) {
       attempts++;
-      const res = checkWord(data, randomWord);
+      const res = checkWord(data.toLowerCase(), randomWord.toLowerCase());
       const resArr = res[1];
       console.log(
         resArr[0],
@@ -45,6 +46,9 @@ standard_input.on("data", function (data) {
       if (res[0] === 5) {
         console.log("Yay! You got it right🎉");
         process.exit();
+      }
+      if (attempts === 6) {
+        console.log(chalk.blue(randomWord), "You suck at this bro");
       }
     } else {
       console.log(chalk.red("Invalid Input"));
