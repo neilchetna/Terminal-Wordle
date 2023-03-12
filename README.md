@@ -2,7 +2,12 @@
 Terminal Wordle
 </h1>
 
+
 [Wordle](https://www.nytimes.com/games/wordle/index.html) in the terminal: A command-line game for guessing a five-letter word using feedback from partial matches.
+
+<center>
+<img src="https://imgur.com/hKfMmn8.gif" width="100%">
+</center>
 
 ## Install Guide 
 Clone the repo
